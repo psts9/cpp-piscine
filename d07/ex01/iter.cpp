@@ -17,7 +17,8 @@ void    printStr(std::string str)
     std::cout << str << std::endl;
 }
 
-void    multByTwo(double& d)
+template<typename T>
+void    multByTwo(T& d)
 {
     d *= 2.0;
 }
@@ -57,7 +58,7 @@ int main(void)
 
     std::cout << std::endl;
 
-    iter(drr, 21, multByTwo);
+    iter(drr, 21, multByTwo<double>);
 
     std::cout << std::endl;
 
