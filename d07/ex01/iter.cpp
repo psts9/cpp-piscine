@@ -1,7 +1,7 @@
 #include <iostream>
 
-template<typename T, typename D>
-void    iter(T* p, size_t len, void (&f)(D))
+template<typename T, typename D, typename F>
+void    iter(T* p, size_t len, F (&f)(D))
 {
     for (size_t i = 0; i < len; ++i)
         f(p[i]);
@@ -12,9 +12,10 @@ void    printInt(int n)
     std::cout << n << std::endl;
 }
 
-void    printStr(std::string str)
+int    printStr(std::string const& str)
 {
     std::cout << str << std::endl;
+    return (1);
 }
 
 template<typename T>
